@@ -9,5 +9,8 @@ jobs:
     steps:
      - uses: actions/checkout@v2
      
+     - name: Error Simulation
+       run: echo "Failing at this point ..." ; exit 1 
+     
      - name: Run a YAML Script to check DevOps CI 
        run: echo "Ready for DevOps CI"
