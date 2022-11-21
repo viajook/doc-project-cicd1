@@ -1,0 +1,13 @@
+name: CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+     - uses: actions/checkout@v2
+     
+     - name: Run a YAML Script to check DevOps CI 
+       run: echo "Ready for DevOps CI"
