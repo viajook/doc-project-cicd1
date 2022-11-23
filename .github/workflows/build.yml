@@ -8,7 +8,7 @@ on:
     branches: [ master ]
     #  - master
 
-  jobs:
+jobs:
     #Test's job
     tests:
       name: Unit tests
