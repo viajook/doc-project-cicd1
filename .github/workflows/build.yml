@@ -75,6 +75,6 @@ jobs:
       needs: build
       name: Deploy
       runs-on: ubuntu-latest
-        steps:
-          - name: Run a Script to automate deployment
-            run: echo "Deployment part of CD coming next..."
+      steps:
+        - name: Run a Script to automate deployment
+          run: echo "Deployment part of CD coming next..."
