@@ -76,7 +76,7 @@ jobs:
     # Publish's job
     publish-app-image:
       #Depends on build's job
-      needs: build
+      # needs: build
       runs-on: ubuntu-latest
       permissions:
         contents: read
