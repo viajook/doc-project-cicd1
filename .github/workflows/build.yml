@@ -92,7 +92,7 @@ jobs:
             password: ${{ secrets.GITHUB_TOKEN }}
         - name: Build the App Docker image
           run: |
-            echo $GHCR_PAT | docker login ghcr.io -u viajook --password-stdin
+            # echo $GHCR_PAT | docker login ghcr.io -u viajook --password-stdin
             docker build . --tag ghcr.io/viajook/doc-project-cicd1:latest
             docker run ghcr.io/viajook/doc-project-cicd1:latest
             docker push ghcr.io/jviajook/doc-project-cicd1:latest
