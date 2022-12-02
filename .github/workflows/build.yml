@@ -77,11 +77,18 @@ jobs:
 
       steps:
         - uses: actions/checkout@v2
+        - name: Login to GitHub Container Registry
+          uses: docker/login-action@v1
+          with:
+            registry: ghcr.io
+            username: ${{ github.actor }}
+            password: ${{ secrets.GITHUB_TOKEN }}
+
         - name: Build the App Docker image
           run: |
-            echo $GHCR_PAT | docker login ghcr.io -u viajook --password-stdin
-          env:
-            GHCR_PAT: ${{ secrets.GHCR_PAT }}
+          #  echo $GHCR_PAT | docker login ghcr.io -u viajook --password-stdin
+          #env:
+          #  GHCR_PAT: ${{ secrets.GHCR_PAT }}
             docker build . --tag ghcr.io/viajook/doc-project-cicd1:latest
             docker run ghcr.io/viajook/doc-project-cicd1:latest
             docker push ghcr.io/jviajook/doc-project-cicd1:latest
