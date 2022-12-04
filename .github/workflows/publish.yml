@@ -5,7 +5,7 @@ on:
 
 jobs:
   #Publish's job
-  publish-docker-image:
+  publishimage:
     name: Publish image
     runs-on: ubuntu-latest
 
