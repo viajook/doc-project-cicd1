@@ -51,8 +51,9 @@
                         <configuration>
                             <archive>
                                 <manifest>
+                                    <addClasspath>true</addClasspath>
                                     <mainClass>
-                                        DevopsToolsMgtApplication
+                                        via.doc.devopstoolsmgt.DevopsToolsMgtApplication
                                     </mainClass>
                                 </manifest>
                             </archive>
