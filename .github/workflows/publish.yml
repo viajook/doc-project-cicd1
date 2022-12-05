@@ -14,6 +14,8 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check out code
+        uses: actions/checkout@v2
       - name: Build the App Docker image
         run: |
           docker build . --tag ghcr.io/viajook/doc-project-cicd1:latest
