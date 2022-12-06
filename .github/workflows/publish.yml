@@ -64,17 +64,20 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+          # Log out from the Docker registry at the end of a job
+          logout: true
 
       #- name: Check out code
       #  uses: actions/checkout@v2
-      - name: Download artifact
-        uses: actions/download-artifact@v2
+      #- name: Download artifact
+      #  uses: actions/download-artifact@v2
 
       - name: Build the App Docker image and push
-        run: |
-          docker build . --tag ghcr.io/viajook/doc-project-cicd1:latest
-          docker run ghcr.io/viajook/doc-project-cicd1:latest
-          docker push ghcr.io/viajook/doc-project-cicd1:latest
+        run: mvn jib:build
+        #run: |
+        #  docker build . --tag ghcr.io/viajook/doc-project-cicd1:latest
+        #  docker run ghcr.io/viajook/doc-project-cicd1:latest
+        #  docker push ghcr.io/viajook/doc-project-cicd1:latest
       #- name: Build and push
       #  id: docker_build
       #  uses: docker/build-push-action@v2
