@@ -60,9 +60,11 @@
                 <artifactId>jib-maven-plugin</artifactId>
                 <version>3.3.1</version>
                 <configuration>
+                    <!--
                     <from>
                         <image>gcr.io/distroless/java:17</image>
                     </from>
+                    -->
                     <to>
                         <image>ghcr.io/viajook/doc-project-cicd1</image>
                     </to>
