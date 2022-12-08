@@ -109,6 +109,6 @@ jobs:
         with:
           app-name: 'devops-tools-mgt'
           publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
-          images: 'ghcr.io/viajook/doc-project-cicd1:${{ github.sha }}'
+          images: 'ghcr.io/viajook/doc-project-cicd1:latest'
 
 
