@@ -90,3 +90,25 @@ jobs:
       #    context: .
       #    push: true
       #    tags: viajook/doc-project-cicd1:v${{github.run_number}}
+
+  Deploy:
+    runs-on: ubuntu-latest
+    name: deploy to Azure App Service
+    needs: Publish
+    steps:
+      - name: Checkout GitHub Action
+        uses: actions/checkout@v2
+
+      - name: Login via Azure CLI
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy Docker Image
+        uses: azure/webapps-deploy@v2 #azure/spring-apps-deploy@v2
+        with:
+          app-name: 'devops-tools-mgt'
+            publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
+            images: 'ghcr.io/viajook/doc-project-cicd1:${{ github.sha }}'
+
+
