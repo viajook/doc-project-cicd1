@@ -33,7 +33,7 @@ class DevopsToolsMgtApplicationTests {
 
     @Test
     void toolsContent() {
-        assertEquals("GitLab, GIT",
+        assertEquals("GitLab, GitHub Actions",
                 controller.getRandomTools());
 
     }
