@@ -22,6 +22,6 @@ public class DevOpsPtController {
 
     @GetMapping("/tools")
     public String getRandomTools() {
-        return "GitLab, GIT";
+        return "GitLab, GitHub Actions";
     }
 }
